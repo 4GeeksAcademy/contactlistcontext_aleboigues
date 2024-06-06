@@ -25,7 +25,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 			getContacts: async () => {
 				try {
 					const response = await fetch(
-						"https://playground.4geeks.com/contact/agendas/agenda"
+						"https://playground.4geeks.com/contact/agendas/AleBoi"
 					);
 					if (!response.ok) {
 						throw new Error("no se pueden cargar")
@@ -41,7 +41,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 
 			postContact: async (inputName, inputPhone, inputEmail, inputAddress) => {
 				let actions = getActions();
-				const response = await fetch("https://playground.4geeks.com/contact/agendas/agenda/contacts", {
+				const response = await fetch("https://playground.4geeks.com/contact/agendas/AleBoi/contacts", {
 					method: "POST",
 					body: JSON.stringify({
 						name: inputName,
@@ -79,7 +79,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 				let actions = getActions();
 				let store = getStore();
 				
-				const response = await fetch('https://playground.4geeks.com/contact/agendas/agenda/contacts/' + `${store.contact2.id}`, {
+				const response = await fetch('https://playground.4geeks.com/contact/agendas/AleBoi/contacts/' + `${store.contact2.id}`, {
 					method: "PUT",
 					body: JSON.stringify({
 						name: inputName,
@@ -101,7 +101,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 
 			deleteContact: async (id) => {
 				let actions = getActions();
-				const response = await fetch('https://playground.4geeks.com/contact/agendas/agenda/contacts/' + `${id}`, {
+				const response = await fetch('https://playground.4geeks.com/contact/agendas/AleBoi/contacts/' + `${id}`, {
 					method: "DELETE",
 				})
 				if (!response.ok) {
